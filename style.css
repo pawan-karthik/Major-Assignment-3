@@ -1,0 +1,84 @@
+circle {
+    fill-opacity: .9;
+}
+
+line {
+    stroke: #363030;
+    stroke-opacity: 0.6;
+}
+
+.label {
+    font-size: x-small;
+    font-family: sans-serif;
+}
+
+.inactive {
+    opacity: .1;
+}
+
+.tooltip {
+    font-size: 15px;
+    color: black;
+}
+
+#author-tooltip {
+    position: absolute;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    visibility: hidden;
+    opacity: 0.9;
+}
+
+#title {
+    text-align: center;
+    margin-top: 4rem;
+}
+
+#controls {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background: white;
+    padding: 10px;
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#legend {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: white;
+    padding: 10px;
+    border: 1px solid #ccc;
+    font-size: 1.2rem; /* Increase the font size */
+}
+
+#legend h4 {
+    font-size: 1.5rem; /* Larger heading for the legend */
+    margin-bottom: 10px;
+}
+
+#legend ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#legend ul li {
+    font-size: 1.2rem; /* Larger font size for the list items */
+    margin-bottom: 5px;
+}
+
+.tooltip {
+    position: absolute;
+    visibility: hidden;
+    background: lightgrey;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+}

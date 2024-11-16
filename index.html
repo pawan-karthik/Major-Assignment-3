@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Author Network Visualization</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="network.js"></script>
+    <style>
+        #title {
+            text-align: center;
+            margin-top: 4rem;
+        }
+        #controls {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            background: white;
+            padding: 10px;
+            border: 1px solid #ccc;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        #legend {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: white;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        .tooltip {
+            position: absolute;
+            visibility: hidden;
+            background: lightgrey;
+            padding: 5px;
+            border-radius: 5px;
+            font-size: 0.9em;
+            box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+        }
+        .centered {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="title">Major Assignment - 3</h1>
+    <h1 class="centered">Author Network Visualization</h1>
+    <h1>Pawan Karthik (ID - 02126392)</h1>
+
+    <!-- Tooltip for "Authors with affiliations" -->
+    <div id="author-tooltip" class="tooltip"></div>
+
+    <!-- Container for the D3 Network SVG -->
+    <script>
+        d3.json("csvjson.json").then(function (data) {
+            let svg = d3.select('body').append("svg").attr("viewBox", "0 0 1000 800");
+
+            simulate(data, svg); // main function to create the network visualization
+        });
+    </script>
+
+    <!-- Controls for UI adjustments -->
+    <div id="controls"></div>
+
+    <!-- Legend for Top 10 Countries -->
+    <div id="legend">
+        <h4>Top 10 Countries</h4>
+        <ul id="country-list" style="list-style: none; padding: 0;"></ul>
+    </div>
+</body>
+</html>
